@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Тілдермен мәліметтер</title>
+</head>
+ <style>
+   body {
+      background: url("body.jfif") no-repeat center center/cover; 
+   }
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .photo-item {
+    border-radius: 12px;
+    overflow: hidden; /* сурет шекарадан шықпау үшін */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .photo-item img {
+    width: 100%;      /* контейнерді толық алып тұрсын */
+    height: 200px;    /* биіктікті бірдей қылу */
+    object-fit: cover;/* сурет созылмай, әдемі қиылады */
+    display: block;
+  }
+
+  .photo-item:hover {
+    transform: scale(1.05);
+  }
+
+  .section-title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+.btn {
+    display: inline-block;
+    background: #2575fc;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+}
+
+ </style>
+<body>
+              <div id="exit">
+                 <a href="site.html" class="btn">Артқа</a>
+              </div>
+              <h2 class="section-title">IT саласындағы көп қолданысқа ие тілдер</h2>
+                <div class="photo-grid">
+                    <div class="photo-item"> <img src="x1476977240.jpg.pagespeed.ic._gA-oSaUBv.webp"></div>
+                    <div class="photo-item"> <img src="5968305.png"></div>
+                    <div class="photo-item"> <img src="black-background-with-letters-j-j-blue-red_1267893-18014.jpg"></div>
+                    <div class="photo-item"> <img src="python.png"></div>
+                    <div class="photo-item"> <img src="c.png"></div>
+                    <div class="photo-item"> <img src="74897.png"></div>
+                    <div class="photo-item"> <img src="kotlin.webp"></div>
+                    <div class="photo-item"> <img src="iazyk-programmirovaniia-java-logo-1.webp"></div>
+                     <div class="photo-item"> <img src="typescript_alt_icon_131915.png"></div>
+                    <div class="photo-item"> <img src="png-transparent-swift-apple-xcode-app-store-apple-class-orange-logo.png"></div>
+            </div>
+        </section>
+</body>
+</html>
