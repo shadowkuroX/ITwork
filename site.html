@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school</title>
+    <!-- Пока НЕ подключаем CSS -->
+    <style>
+        /* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9fc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    position: relative;
+    background: url("kieenma6mtrjqpk0kpqpigc74dtu8e6j.jpg") no-repeat center center/cover; 
+    color: white;
+    text-align: center;
+    padding: 80px 30px; 
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.header .container {
+    position: relative;
+    z-index: 1; /* мәтін қабат үстінде тұрады */
+}
+.header-subtitle {
+    opacity: 0.8;
+}
+.header-title span {
+    color: gold;
+}
+.header-title {
+    font-size: 60px;
+}
+
+/* Герой-секция */
+.hero {
+    padding: 80px 0;
+    background-color: white;
+    text-align: center;
+}
+.hero p{
+    opacity: 0.9;
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background: #2575fc;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+}
+
+.btn:hover {
+    background: #1a5fd6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+}
+
+/* Секции */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #2575fc;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Карточки */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.card img {
+    width: 100%;      /* контейнерді толық алып тұрсын */
+    height: 200px;    /* биіктікті бірдей қылу */
+    object-fit: cover;/* сурет созылмай, әдемі қиылады */
+    display: block;
+    border-radius: 8px
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card h3 h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+/* Учителя */
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.teacher-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.teacher-avatar {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.teacher-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Подвал */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 80px;
+}
+
+.footer p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #2575fc;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c3e50;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #2575fc;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: #2575fc;
+            transition: width 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        @media(max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
+     .images {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+     }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <img class="images" src="blue-stork-logo-with-gradient-style_501861-174.jpg" alt="logo">
+            <div class="nav-menu">
+                <a href="site.html">Басты бөлім</a>
+                <a href="#about">Компания суреттері</a>
+                <a href="#IT specialist">IT саласындағы Топ-3 мамандар</a>
+                <a href="text (1).html">IT туралы</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">🎓 <span>IT</span> дегеніміз не?</h1>
+            <p class="header-subtitle">2024/2025 басылым</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+
+        <!-- Герой-секция -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h2>Сәлем, достар! Бұл сайтта біз сіздерге IT дегеніміз не екенін түсіндіріп, қызықты мәліметтермен бөлісеміз.</h2>
+                <p>Толығырақ батырмасын басу арқылы сіз қандай IT тілдерімен танысатыныңызды және олардың ішінде ең танымалдарын біле аласыз.</p>
+                <a href="index.html" class="btn">Толығырақ</a>
+            </div>
+        </section>
+
+        <!-- О классе -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Атақты компаниялар</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Google</h3>
+                        <img src="google-company.jpg">
+                       
+                    </div>
+                    <div class="card">
+                        <h3>Microsoft</h3>
+                        <img src="840px-9cRs0PoG8JOHFXzYn9cORY68ba71JzQ6OBLryQB7.jpeg">
+                    </div>
+                    <div class="card">
+                        <h3>Meta</h3>
+                        <img src="mark-tsukerberh-svorachivaet-59_main.jpeg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Учителя -->
+        <section id="IT specialist" class="teachers">
+            <div class="container">
+                <h2 class="section-title">IT саласына үлкен үлес қосқан Топ-3 айтишниктер</h2>
+                <div class="teacher-grid">
+                    <div class="card">
+                        <h3>Билл Гейтс</h3>
+                        <img src="bill_gates.jpg__1583763919__51130.webp">
+                    </div>
+                    <div class="card">
+                        <h3>Стив Джобс</h3>
+                        <img src="ela.webp">
+                    </div>
+                    <div class="card">
+                        <h4>Ларри Пейдж и Cергей Брин</h4>
+                        <img src="1397233081.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 • Садықжан • Еламан</p>
+        </div>
+    </footer>
+
+</body>
+</html>
